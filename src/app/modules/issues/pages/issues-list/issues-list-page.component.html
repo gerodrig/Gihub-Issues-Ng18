@@ -1,0 +1,35 @@
+<h1>Github Issues</h1>
+<div class="my-5 border-b-2 border-blue-600"></div>
+
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+
+    <!-- //Buttons to control the state -->
+  <div class="flex flex-col col-span-3">
+    <div class="flex gap-2">
+        <button class="btn active">All</button>
+        <button class="btn">Open</button>
+        <button class="btn">Closed</button>
+    </div>
+  </div>
+
+  <!-- Elements list -->
+   <div class="mt-4 flex flex-col col-span-2">
+    <a routerLink="/issue/123">Go to issue 123</a>
+    <!-- TODO: Issues List -->
+    <!-- TODO: Spinner -->
+    <!-- TODO: If there are no issues by filter -->
+   </div>
+
+   <!-- Labels -->
+    <div>
+        <!-- TODO: Spinner -->
+         @if(labelsQuery.isLoading()){
+            <div>Loading...</div>
+         } @else{
+          <issues-labels-selector [labels]="labelsQuery.data() ?? []" />
+         }
+
+
+        <!-- TODO: Label Selector -->
+    </div>
+</section>
