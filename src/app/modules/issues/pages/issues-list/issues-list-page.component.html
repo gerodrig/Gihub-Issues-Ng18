@@ -14,8 +14,16 @@
 
   <!-- Elements list -->
    <div class="mt-4 flex flex-col col-span-2">
-    <a routerLink="/issue/123">Go to issue 123</a>
-    <!-- TODO: Issues List -->
+    <!-- Issues List -->
+     @for(issue of issuesQuery.data(); track issue.id){
+      <issue-item [issue]="issue" />
+     }@empty {
+      @if(issuesQuery.isLoading()){
+        <div>Loading...</div>
+      } @else{
+        <div>No issues found</div>
+      }
+     }
     <!-- TODO: Spinner -->
     <!-- TODO: If there are no issues by filter -->
    </div>
