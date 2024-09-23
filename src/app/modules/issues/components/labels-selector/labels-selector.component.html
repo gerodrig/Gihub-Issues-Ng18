@@ -1,9 +1,11 @@
-<div class="flex flex-wrap justify-center items-center gap-2">
+<div class="flex flex-wrap items-center justify-center gap-2">
   @for(label of labels(); track label.id){
 
   <div
-    class="border p2 rounded-md hover:bg-slate-950 p-1 cursor-pointer"
+    class="p-1 border rounded-md cursor-pointer p2 hover:bg-slate-950"
     [ngStyle]="{'border-color': '#' + label.color}"
+    (click)="onToggleLabel(label.name)"
+    [class.selected-label]="isLabelSelected(label.name)"
   >
     {{ label.name }}
   </div>

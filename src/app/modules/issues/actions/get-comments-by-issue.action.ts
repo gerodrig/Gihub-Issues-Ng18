@@ -10,6 +10,8 @@ export const getCommentsByIssue = async (
 ): Promise<GithubIssue[]> => {
   await sleep(1500);
 
+  console.log('Issue number:', issueNumber);
+
   try {
     const response = await fetch(`${BASE_URL}/issues/${issueNumber}/comments`, {
       headers: {
