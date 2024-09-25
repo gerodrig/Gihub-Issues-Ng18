@@ -1,8 +1,8 @@
 
 
-import { sleep } from '@helpers/sleep';
+// import { sleep } from '@helpers/sleep';
 import { environment } from 'src/environments/environment.development';
-import { GithubIssue, State } from '../interfaces';
+import { type GithubIssue, State } from '../interfaces';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.githubToken;
@@ -10,7 +10,7 @@ const GITHUB_TOKEN = environment.githubToken;
 
 
 export const getIssues = async (state: State = State.All, selectedLabels: string[]): Promise<GithubIssue[]> => {
-  await sleep(1500);
+  // await sleep(1500);
 
   const params = new URLSearchParams();
   params.append('state', state);

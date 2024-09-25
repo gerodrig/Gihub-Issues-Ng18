@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment.development';
-import { GithubIssue } from '../interfaces';
+import type { GithubIssue } from '../interfaces';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.githubToken;
